@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DraggableModalTransition_Example' do
+  pod 'DraggableModalTransition', :path => '../'
+
+  target 'DraggableModalTransition_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
