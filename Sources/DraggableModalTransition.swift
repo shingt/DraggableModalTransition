@@ -37,14 +37,14 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         
         super.init()
         
-        self.removeGestureRecognizerFrommodalViewController()
+        self.removeGestureRecognizerFromModalViewController()
         let gestureRecognizerProxy = UIPanGestureRecognizer(target:self, action:#selector(handlePanGesture(recognizer:)))
         gestureRecognizerProxy.delegate = self
         self.modalViewController.view.addGestureRecognizer(gestureRecognizerProxy)
         self.gestureRecognizerProxy = gestureRecognizerProxy
     }
 
-    fileprivate func removeGestureRecognizerFrommodalViewController() {
+    fileprivate func removeGestureRecognizerFromModalViewController() {
         guard let gestureRecognizerProxy = gestureRecognizerProxy else { return }
         guard let gestureRecognizers = modalViewController.view.gestureRecognizers else { return }
         guard gestureRecognizers.contains(gestureRecognizerProxy) else { return }
