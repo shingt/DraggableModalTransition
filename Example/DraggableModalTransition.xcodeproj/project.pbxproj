@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1268CD7F1E3DEC2200760C96 /* DraggableModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1268CD7E1E3DEC2200760C96 /* DraggableModalTransition.swift */; };
+		120198871EEBD482004C3631 /* DraggableModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120198861EEBD482004C3631 /* DraggableModalTransition.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,8 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120198861EEBD482004C3631 /* DraggableModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableModalTransition.swift; path = ../Sources/DraggableModalTransition.swift; sourceTree = "<group>"; };
 		1268CD7C1E3DEBEA00760C96 /* DraggableModalTransition_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraggableModalTransition_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1268CD7E1E3DEC2200760C96 /* DraggableModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableModalTransition.swift; sourceTree = "<group>"; };
 		12B984FA95B467295040EE04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		1268CD7D1E3DEC0000760C96 /* DraggableModalTransition */ = {
 			isa = PBXGroup;
 			children = (
-				1268CD7E1E3DEC2200760C96 /* DraggableModalTransition.swift */,
+				120198861EEBD482004C3631 /* DraggableModalTransition.swift */,
 			);
 			name = DraggableModalTransition;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1268CD7F1E3DEC2200760C96 /* DraggableModalTransition.swift in Sources */,
+				120198871EEBD482004C3631 /* DraggableModalTransition.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
