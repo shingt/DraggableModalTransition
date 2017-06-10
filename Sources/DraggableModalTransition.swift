@@ -53,7 +53,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         self.gestureRecognizerProxy = nil
     }
     
-    internal func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    @objc internal func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         isSwiping = true
         
         let location = recognizer.location(in: modalViewController.view.window)
