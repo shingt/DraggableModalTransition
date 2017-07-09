@@ -112,8 +112,8 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         let targetRect = CGRect(
             x: 0,
             y: targetY,
-            width: fromViewController.view.frame.width,
-            height: fromViewController.view.frame.height
+            width: fromViewController.view.bounds.width,
+            height: fromViewController.view.bounds.height
         )
         fromViewController.view.frame = targetRect
         backgroundView.alpha = 1.0 - percentComplete
@@ -127,8 +127,8 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         let targetRect = CGRect(
             x: 0,
             y: fromViewController.view.bounds.height,
-            width: fromViewController.view.frame.width,
-            height: fromViewController.view.frame.height)
+            width: fromViewController.view.bounds.width,
+            height: fromViewController.view.bounds.height)
         
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
@@ -157,8 +157,8 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         let targetRect = CGRect(
             x: 0,
             y: 0,
-            width: fromViewController.view.frame.width,
-            height: fromViewController.view.frame.height
+            width: fromViewController.view.bounds.width,
+            height: fromViewController.view.bounds.height
         )
         UIView.animate(
             withDuration: 0.4,
@@ -210,17 +210,17 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
         backgroundView.alpha = 0.0
         let startRect = CGRect(
             x: 0,
-            y: containerView.frame.height,
+            y: containerView.bounds.height,
             width: containerView.bounds.width,
             height: containerView.bounds.height
         )
         toViewController.view.frame = startRect
-        let originalHeight = toViewController.view.frame.height
+        let originalHeight = toViewController.view.bounds.height
         let boundingMargin: CGFloat = 20
         let targetRect = CGRect(
             x: 0,
             y: 0,
-            width: toViewController.view.frame.width,
+            width: toViewController.view.bounds.width,
             height: originalHeight + boundingMargin
         )
         
@@ -236,7 +236,7 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
         }, completion: { _ in
             let didCompleteTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(didCompleteTransition)
-            toViewController.view.frame.size.height = originalHeight
+            toViewController.view.bounds.size.height = originalHeight
         })
     }
     
@@ -253,8 +253,8 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
         let targetRect = CGRect(
             x: 0,
             y: fromViewController.view.bounds.height,
-            width: fromViewController.view.frame.width,
-            height: fromViewController.view.frame.height
+            width: fromViewController.view.bounds.width,
+            height: fromViewController.view.bounds.height
         )
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
