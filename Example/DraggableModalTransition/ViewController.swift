@@ -36,19 +36,19 @@ final class ModalViewController: UIViewController {
     private var tableView: UITableView {
         let tableView = UITableView()
         let verticalOffset: CGFloat = 20
-        tableView.frame = CGRect(x: 0, y: verticalOffset, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        tableView.frame = CGRect(x: 0, y: verticalOffset, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
         tableView.backgroundColor = .clear
         tableView.rowHeight = 40
         tableView.delegate = self
         tableView.dataSource = self
         let dummyFooterView: UIView = {
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 200))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200))
             view.backgroundColor = .white
             return view
         }()
         tableView.tableFooterView = dummyFooterView
         tableView.sectionHeaderHeight = 44
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -dummyFooterView.frame.height + verticalOffset, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -dummyFooterView.bounds.height + verticalOffset, right: 0)
         tableView.scrollIndicatorInsets = UIEdgeInsets(top: tableView.sectionHeaderHeight, left: 0, bottom: verticalOffset, right: 0)
         tableView.layer.cornerRadius = 10
         tableView.layer.masksToBounds = true
@@ -86,7 +86,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     
    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44))
         view.backgroundColor = .white
         view.roundsTopCorners(radius: 10)
         let label = UILabel()
