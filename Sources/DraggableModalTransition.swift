@@ -7,9 +7,14 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
     public var boundingMargin: CGFloat = 20
     
     fileprivate var gestureRecognizerProxy: UIPanGestureRecognizer?
-    fileprivate weak var modalViewController: UIViewController!
     fileprivate var transitionContext: UIViewControllerContextTransitioning?
     fileprivate var panGestureStartLocationY: CGFloat = 0.0
+    fileprivate var draggingState: DraggingState = .default
+    fileprivate var animationMode: AnimationMode = .presentation
+    fileprivate var isSwiping = false
+    fileprivate var dismissed = false
+
+    fileprivate weak var modalViewController: UIViewController!
     fileprivate lazy var backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .black
@@ -29,10 +34,6 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         case presentation
         case dismissal
     }
-    fileprivate var draggingState: DraggingState = .default
-    fileprivate var animationMode: AnimationMode = .presentation
-    fileprivate var isSwiping = false
-    fileprivate var dismissed = false
     
     public init(with modalViewController: UIViewController) {
         self.modalViewController = modalViewController
@@ -46,16 +47,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         self.gestureRecognizerProxy = gestureRecognizerProxy
     }
 
-    fileprivate func removeGestureRecognizerFromModalViewController() {
-        guard let gestureRecognizerProxy = gestureRecognizerProxy else { return }
-        guard let gestureRecognizers = modalViewController.view.gestureRecognizers else { return }
-        guard gestureRecognizers.contains(gestureRecognizerProxy) else { return }
-        
-        modalViewController.view.removeGestureRecognizer(gestureRecognizerProxy)
-        self.gestureRecognizerProxy = nil
-    }
-    
-    internal func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         isSwiping = true
         
         let location = recognizer.location(in: modalViewController.view.window)
@@ -162,7 +154,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
             height: fromViewController.view.bounds.height
         )
         UIView.animate(
-            withDuration: 0.4,
+            withDuration: TimeInterval(transitionDuration),
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0.1,
@@ -191,6 +183,15 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         draggingState = .dragging
         modalViewController.dismiss(animated: true, completion: nil)
         dismissed = true
+    }
+
+    private func removeGestureRecognizerFromModalViewController() {
+        guard let gestureRecognizerProxy = gestureRecognizerProxy else { return }
+        guard let gestureRecognizers = modalViewController.view.gestureRecognizers else { return }
+        guard gestureRecognizers.contains(gestureRecognizerProxy) else { return }
+        
+        modalViewController.view.removeGestureRecognizer(gestureRecognizerProxy)
+        self.gestureRecognizerProxy = nil
     }
 }
 
@@ -319,10 +320,7 @@ extension DraggableModalTransition: UIGestureRecognizerDelegate {
     }
 }
 
-public protocol ModalViewControllerDelegate: class {
-    func modalViewDidScroll(_ scrollView: UIScrollView)
-}
-
+// pragma mark - ModalViewControllerDelegate
 extension DraggableModalTransition: ModalViewControllerDelegate {
     public func modalViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
