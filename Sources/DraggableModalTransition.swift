@@ -319,10 +319,7 @@ extension DraggableModalTransition: UIGestureRecognizerDelegate {
     }
 }
 
-public protocol ModalViewControllerDelegate: class {
-    func modalViewDidScroll(_ scrollView: UIScrollView)
-}
-
+// pragma mark - ModalViewControllerDelegate
 extension DraggableModalTransition: ModalViewControllerDelegate {
     public func modalViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
