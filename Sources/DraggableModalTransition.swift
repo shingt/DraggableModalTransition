@@ -32,6 +32,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
     fileprivate var draggingState: DraggingState = .default
     fileprivate var animationMode: AnimationMode = .presentation
     fileprivate var isSwiping = false
+    fileprivate var dismissed = false
     
     public init(with modalViewController: UIViewController) {
         self.modalViewController = modalViewController
@@ -63,12 +64,14 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         switch recognizer.state {
         case .began:
             if draggingState.draggable {
-                draggingState = .dragging
-                panGestureStartLocationY = location.y
+                setupInteractiveTransition(atLocationY: location.y)
             }
-            modalViewController.dismiss(animated: true, completion: nil)
         case .changed:
             guard draggingState.draggable else { return }
+            guard dismissed else {
+                setupInteractiveTransition(atLocationY: location.y)
+                return
+            }            
             guard let fromViewController = transitionContext?.viewController(forKey: .from) else { return }
             
             if fromViewController.view.frame.origin.y <= 0 {
@@ -88,10 +91,8 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         case .ended:
             guard draggingState.draggable else { cancel(); return }
             velocity.y > velocityThresholdToDismiss ? finish() : cancel()
-            draggingState = .default
         case .cancelled, .failed:
             cancel()
-            draggingState = .default
         default:
             return
         }
@@ -106,7 +107,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         transitionContext.containerView.addSubview(backgroundView)
         transitionContext.containerView.bringSubview(toFront: fromViewController.view)
     }
-   
+
     override public func update(_ percentComplete: CGFloat) {
         guard let fromViewController = transitionContext?.viewController(forKey: .from) else { return }
         let targetY = max(fromViewController.view.bounds.height * percentComplete, 0)
@@ -143,8 +144,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         }, completion: { _ in
             let didCompleteTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(didCompleteTransition)
-            self.isSwiping = false
-        self.gestureRecognizerProxy?.isEnabled = true
+            self.cleanUpTransition()
         })
     }
 
@@ -173,9 +173,24 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         }, completion: { _ in
             transitionContext.completeTransition(false)
             toViewController.view.removeFromSuperview()
-            self.isSwiping = false
-        self.gestureRecognizerProxy?.isEnabled = true
+            self.cleanUpTransition()
         })
+    }
+
+    private func cleanUpTransition() {
+        draggingState = .default
+        dismissed = false
+        gestureRecognizerProxy?.isEnabled = true
+        isSwiping = false
+    }
+    
+    private func setupInteractiveTransition(atLocationY: CGFloat) {
+        guard let modalViewController = modalViewController else { return }
+        
+        panGestureStartLocationY = atLocationY
+        draggingState = .dragging
+        modalViewController.dismiss(animated: true, completion: nil)
+        dismissed = true
     }
 }
 
