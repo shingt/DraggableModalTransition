@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DraggableModalTransition'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Enables dragging interaction similar to Facebook Messenger app'
   s.description      = <<-DESC
 DraggableModalTransition enables dragging interaction and animation of scrollView in a similar way to Facebook Messenger app.
