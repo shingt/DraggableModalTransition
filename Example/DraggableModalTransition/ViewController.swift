@@ -9,7 +9,7 @@ final class ViewController: UIViewController {
        
         let button: UIButton = {
             let button = UIButton()
-            button.setTitle("Pop", for: .normal)
+            button.setTitle("Present", for: .normal)
             button.setTitleColor(.white, for: .normal)
             button.sizeToFit()
             button.center = view.center

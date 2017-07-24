@@ -71,7 +71,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
             guard dismissed else {
                 setupInteractiveTransition(atLocationY: location.y)
                 return
-            }            
+            }
             guard let fromViewController = transitionContext?.viewController(forKey: .from) else { return }
             
             if fromViewController.view.frame.origin.y <= 0 {
