@@ -35,7 +35,7 @@ func presentModalView() {
 }
 ```
 
-For now you also need to call `modalViewDidScroll`. (Hopefully it will be fixed soon.)
+For now you also need to call `modalViewDidScroll` in your `scrollViewDidScroll`.
 
 ```swift
 class ModalViewController {
