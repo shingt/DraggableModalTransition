@@ -4,6 +4,7 @@ import UIKit.UIGestureRecognizerSubclass
 public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
     public var transitionDuration: CGFloat = 0.6
     public var velocityThresholdToDismiss: CGFloat = 100.0
+    public var boundingMargin: CGFloat = 20
     
     fileprivate var gestureRecognizerProxy: UIPanGestureRecognizer?
     fileprivate weak var modalViewController: UIViewController!
@@ -216,7 +217,6 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
         )
         toViewController.view.frame = startRect
         let originalHeight = toViewController.view.bounds.height
-        let boundingMargin: CGFloat = 20
         let targetRect = CGRect(
             x: 0,
             y: 0,
