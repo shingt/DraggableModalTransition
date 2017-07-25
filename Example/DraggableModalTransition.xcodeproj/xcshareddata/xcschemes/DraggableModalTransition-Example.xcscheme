@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "120819071F280BE5007409D7"
                BuildableName = "DraggableModalTransition_Tests.xctest"
                BlueprintName = "DraggableModalTransition_Tests"
                ReferencedContainer = "container:DraggableModalTransition.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "120819071F280BE5007409D7"
                BuildableName = "DraggableModalTransition_Tests.xctest"
                BlueprintName = "DraggableModalTransition_Tests"
                ReferencedContainer = "container:DraggableModalTransition.xcodeproj">

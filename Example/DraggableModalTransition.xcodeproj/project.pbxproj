@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		120198871EEBD482004C3631 /* DraggableModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120198861EEBD482004C3631 /* DraggableModalTransition.swift */; };
+		1208190B1F280BE5007409D7 /* DraggableModalTransition_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1208190A1F280BE5007409D7 /* DraggableModalTransition_Tests.swift */; };
 		12400B351F26B2550030D78C /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12400B341F26B2550030D78C /* ModalViewControllerDelegate.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -15,8 +16,21 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1208190D1F280BE5007409D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = DraggableModalTransition_Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		120198861EEBD482004C3631 /* DraggableModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableModalTransition.swift; path = ../Sources/DraggableModalTransition.swift; sourceTree = "<group>"; };
+		120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraggableModalTransition_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1208190A1F280BE5007409D7 /* DraggableModalTransition_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableModalTransition_Tests.swift; sourceTree = "<group>"; };
+		1208190C1F280BE5007409D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12400B341F26B2550030D78C /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalViewControllerDelegate.swift; path = ../Sources/ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1268CD7C1E3DEBEA00760C96 /* DraggableModalTransition_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraggableModalTransition_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B984FA95B467295040EE04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -30,6 +44,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		120819051F280BE5007409D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120819091F280BE5007409D7 /* DraggableModalTransition_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1208190A1F280BE5007409D7 /* DraggableModalTransition_Tests.swift */,
+				1208190C1F280BE5007409D7 /* Info.plist */,
+			);
+			path = DraggableModalTransition_Tests;
+			sourceTree = "<group>";
+		};
 		1268CD7D1E3DEC0000760C96 /* DraggableModalTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +86,8 @@
 				607FACD21AFB9204008FA782 /* Example for DraggableModalTransition */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				1268CD7C1E3DEBEA00760C96 /* DraggableModalTransition_Example.app */,
+				120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */,
+				120819091F280BE5007409D7 /* DraggableModalTransition_Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +125,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		120819071F280BE5007409D7 /* DraggableModalTransition_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 120819111F280BE5007409D7 /* Build configuration list for PBXNativeTarget "DraggableModalTransition_Tests" */;
+			buildPhases = (
+				120819041F280BE5007409D7 /* Sources */,
+				120819051F280BE5007409D7 /* Frameworks */,
+				120819061F280BE5007409D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1208190E1F280BE5007409D7 /* PBXTargetDependency */,
+			);
+			name = DraggableModalTransition_Tests;
+			productName = DraggableModalTransition_Tests;
+			productReference = 120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		607FACCF1AFB9204008FA782 /* DraggableModalTransition_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "DraggableModalTransition_Example" */;
@@ -116,13 +166,17 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					120819071F280BE5007409D7 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = KXN3SUGTB9;
 					};
 				};
 			};
@@ -140,11 +194,19 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* DraggableModalTransition_Example */,
+				120819071F280BE5007409D7 /* DraggableModalTransition_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		120819061F280BE5007409D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +219,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		120819041F280BE5007409D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1208190B1F280BE5007409D7 /* DraggableModalTransition_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +239,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1208190E1F280BE5007409D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* DraggableModalTransition_Example */;
+			targetProxy = 1208190D1F280BE5007409D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
@@ -190,6 +268,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1208190F1F280BE5007409D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = DraggableModalTransition_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shingt.DraggableModalTransition-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DraggableModalTransition_Example.app/DraggableModalTransition_Example";
+			};
+			name = Debug;
+		};
+		120819101F280BE5007409D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = DraggableModalTransition_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shingt.DraggableModalTransition-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DraggableModalTransition_Example.app/DraggableModalTransition_Example";
+			};
+			name = Release;
+		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -280,7 +396,7 @@
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = KXN3SUGTB9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DraggableModalTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -293,7 +409,7 @@
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = KXN3SUGTB9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DraggableModalTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -306,6 +422,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		120819111F280BE5007409D7 /* Build configuration list for PBXNativeTarget "DraggableModalTransition_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1208190F1F280BE5007409D7 /* Debug */,
+				120819101F280BE5007409D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "DraggableModalTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
