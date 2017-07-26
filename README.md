@@ -1,6 +1,6 @@
 # DraggableModalTransition
 
-[![CI Status](http://img.shields.io/travis/shingt/DraggableModalTransition.svg?style=flat)](https://travis-ci.org/shingt/DraggableModalTransition)
+[![Build Status](https://www.bitrise.io/app/774d809f168e4285/status.svg?token=WCF_C3OBjA-7ejReXNwuuQ&branch=master)](https://www.bitrise.io/app/774d809f168e4285)
 [![Version](https://img.shields.io/cocoapods/v/DraggableModalTransition.svg?style=flat)](http://cocoapods.org/pods/DraggableModalTransition)
 [![License](https://img.shields.io/cocoapods/l/DraggableModalTransition.svg?style=flat)](http://cocoapods.org/pods/DraggableModalTransition)
 ![Xcode 8.2+](https://img.shields.io/badge/Xcode-8.2%2B-blue.svg)
