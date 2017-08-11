@@ -137,6 +137,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
             let didCompleteTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(didCompleteTransition)
             self.cleanUpTransition()
+            transitionContext.finishInteractiveTransition()
         })
     }
 
