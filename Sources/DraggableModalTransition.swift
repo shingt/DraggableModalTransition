@@ -134,39 +134,45 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
                 fromViewController.view.frame = targetRect
                 self.backgroundView.alpha = 0.0
         }, completion: { _ in
+            self.cleanUpTransition()
             let didCompleteTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(didCompleteTransition)
-            self.cleanUpTransition()
+            transitionContext.finishInteractiveTransition()
         })
     }
 
     override public func cancel() {
-        guard let transitionContext = transitionContext else { return }
-        transitionContext.cancelInteractiveTransition()
-        guard let fromViewController = transitionContext.viewController(forKey: .from) else { return }
-        guard let toViewController = transitionContext.viewController(forKey: .to) else { return }
-        
         gestureRecognizerProxy?.isEnabled = false
-        let targetRect = CGRect(
-            x: 0,
-            y: 0,
-            width: fromViewController.view.bounds.width,
-            height: fromViewController.view.bounds.height
-        )
-        UIView.animate(
-            withDuration: TimeInterval(transitionDuration),
-            delay: 0,
-            usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 0.1,
-            options: UIViewAnimationOptions.curveEaseOut,
-            animations: {
-                fromViewController.view.frame = targetRect
-                self.backgroundView.alpha = 1.0
-        }, completion: { _ in
-            transitionContext.completeTransition(false)
-            toViewController.view.removeFromSuperview()
+        let completion = {
             self.cleanUpTransition()
-        })
+            self.transitionContext?.completeTransition(false)
+            self.transitionContext?.cancelInteractiveTransition()
+        }
+        
+        if let fromViewController = transitionContext?.viewController(forKey: .from),
+            let toViewController = transitionContext?.viewController(forKey: .to) {
+            let targetRect = CGRect(
+                x: 0,
+                y: 0,
+                width: fromViewController.view.bounds.width,
+                height: fromViewController.view.bounds.height
+            )
+            UIView.animate(
+                withDuration: TimeInterval(transitionDuration),
+                delay: 0,
+                usingSpringWithDamping: 0.8,
+                initialSpringVelocity: 0.1,
+                options: UIViewAnimationOptions.curveEaseOut,
+                animations: {
+                    fromViewController.view.frame = targetRect
+                    self.backgroundView.alpha = 1.0
+            }, completion: { _ in
+                toViewController.view.removeFromSuperview()
+                completion()
+            })
+        } else {
+            completion()
+        }
     }
 
     private func cleanUpTransition() {
