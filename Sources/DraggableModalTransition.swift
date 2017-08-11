@@ -134,16 +134,15 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
                 fromViewController.view.frame = targetRect
                 self.backgroundView.alpha = 0.0
         }, completion: { _ in
+            self.cleanUpTransition()
             let didCompleteTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(didCompleteTransition)
-            self.cleanUpTransition()
             transitionContext.finishInteractiveTransition()
         })
     }
 
     override public func cancel() {
         guard let transitionContext = transitionContext else { return }
-        transitionContext.cancelInteractiveTransition()
         guard let fromViewController = transitionContext.viewController(forKey: .from) else { return }
         guard let toViewController = transitionContext.viewController(forKey: .to) else { return }
         
@@ -164,9 +163,10 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
                 fromViewController.view.frame = targetRect
                 self.backgroundView.alpha = 1.0
         }, completion: { _ in
-            transitionContext.completeTransition(false)
             toViewController.view.removeFromSuperview()
             self.cleanUpTransition()
+            transitionContext.completeTransition(false)
+            transitionContext.cancelInteractiveTransition()
         })
     }
 
