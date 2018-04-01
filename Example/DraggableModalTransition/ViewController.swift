@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
         view.addSubview(button)
     }
     
-    internal func presentModalView() {
+    @objc internal func presentModalView() {
         let controller = ModalViewController()
         let navigationController = UINavigationController(rootViewController: controller)
       
@@ -156,8 +156,8 @@ final class NextViewController: UIViewController {
         }()
         view.addSubview(button)
     }
-    
-    internal func close() {
+
+    @objc internal func close() {
         dismiss(animated: true, completion: nil)
     }
 }
