@@ -6,16 +6,16 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
     public var velocityThresholdToDismiss: CGFloat = 100.0
     public var boundingMargin: CGFloat = 20
     
-    fileprivate var gestureRecognizerProxy: UIPanGestureRecognizer?
-    fileprivate var transitionContext: UIViewControllerContextTransitioning?
-    fileprivate var panGestureStartLocationY: CGFloat = 0.0
-    fileprivate var draggingState: DraggingState = .default
-    fileprivate var animationMode: AnimationMode = .presentation
-    fileprivate var isSwiping = false
-    fileprivate var dismissed = false
+    private var gestureRecognizerProxy: UIPanGestureRecognizer?
+    private var transitionContext: UIViewControllerContextTransitioning?
+    private var panGestureStartLocationY: CGFloat = 0.0
+    private var draggingState: DraggingState = .default
+    private var animationMode: AnimationMode = .presentation
+    private var isSwiping = false
+    private var dismissed = false
 
-    fileprivate weak var modalViewController: UIViewController!
-    fileprivate lazy var backgroundView: UIView = {
+    private weak var modalViewController: UIViewController!
+    private lazy var backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .black
         return view
