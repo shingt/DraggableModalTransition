@@ -10,8 +10,10 @@
 		120198871EEBD482004C3631 /* DraggableModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120198861EEBD482004C3631 /* DraggableModalTransition.swift */; };
 		1208190B1F280BE5007409D7 /* DraggableModalTransition_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1208190A1F280BE5007409D7 /* DraggableModalTransition_Tests.swift */; };
 		12400B351F26B2550030D78C /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12400B341F26B2550030D78C /* ModalViewControllerDelegate.swift */; };
+		127D17B2212AD35000E6C224 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D17B1212AD35000E6C224 /* ModalViewController.swift */; };
+		127D17B4212AD39B00E6C224 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D17B3212AD39B00E6C224 /* SecondViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* FirstViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -28,15 +30,17 @@
 
 /* Begin PBXFileReference section */
 		120198861EEBD482004C3631 /* DraggableModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableModalTransition.swift; path = ../Sources/DraggableModalTransition.swift; sourceTree = "<group>"; };
-		120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraggableModalTransition_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DraggableModalTransition_Tests.xctest; path = "/Users/shingt/src/github.com/shingt/DraggableModalTransition/Example/build/Debug-iphoneos/DraggableModalTransition_Tests.xctest"; sourceTree = "<absolute>"; };
 		1208190A1F280BE5007409D7 /* DraggableModalTransition_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableModalTransition_Tests.swift; sourceTree = "<group>"; };
 		1208190C1F280BE5007409D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12400B341F26B2550030D78C /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModalViewControllerDelegate.swift; path = ../Sources/ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
 		1268CD7C1E3DEBEA00760C96 /* DraggableModalTransition_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraggableModalTransition_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		127D17B1212AD35000E6C224 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		127D17B3212AD39B00E6C224 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		12B984FA95B467295040EE04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8B9AB3882E7E4ECA1582C78D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -86,7 +90,6 @@
 				607FACD21AFB9204008FA782 /* Example for DraggableModalTransition */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				1268CD7C1E3DEBEA00760C96 /* DraggableModalTransition_Example.app */,
-				120819081F280BE5007409D7 /* DraggableModalTransition_Tests.xctest */,
 				120819091F280BE5007409D7 /* DraggableModalTransition_Tests */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* FirstViewController.swift */,
+				127D17B1212AD35000E6C224 /* ModalViewController.swift */,
+				127D17B3212AD39B00E6C224 /* SecondViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -232,8 +237,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				120198871EEBD482004C3631 /* DraggableModalTransition.swift in Sources */,
+				127D17B4212AD39B00E6C224 /* SecondViewController.swift in Sources */,
+				127D17B2212AD35000E6C224 /* ModalViewController.swift in Sources */,
 				12400B351F26B2550030D78C /* ModalViewControllerDelegate.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* FirstViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
