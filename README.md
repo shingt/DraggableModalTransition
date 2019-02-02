@@ -52,8 +52,8 @@ See example project for more details.
 ## Requirements
 
 * iOS9+
-* Swift 3.0+
-* Xcode 8.0+
+* Swift 4.2+
+* Xcode 10.0+
 
 ## Installation
 

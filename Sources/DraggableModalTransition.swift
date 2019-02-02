@@ -97,7 +97,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
         
         transitionContext.containerView.addSubview(toViewController.view)
         transitionContext.containerView.addSubview(backgroundView)
-        transitionContext.containerView.bringSubview(toFront: fromViewController.view)
+        transitionContext.containerView.bringSubviewToFront(fromViewController.view)
     }
 
     override public func update(_ percentComplete: CGFloat) {
@@ -129,7 +129,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0.1,
-            options: UIViewAnimationOptions.curveEaseOut,
+            options: .curveEaseOut,
             animations: {
                 fromViewController.view.frame = targetRect
                 self.backgroundView.alpha = 0.0
@@ -162,7 +162,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
                 delay: 0,
                 usingSpringWithDamping: 0.8,
                 initialSpringVelocity: 0.1,
-                options: UIViewAnimationOptions.curveEaseOut,
+                options: .curveEaseOut,
                 animations: {
                     fromViewController.view.frame = targetRect
                     self.backgroundView.alpha = 1.0
@@ -201,7 +201,7 @@ public class DraggableModalTransition: UIPercentDrivenInteractiveTransition {
     }
 }
 
-// pragma mark - UIViewControllerAnimatedTransitioning
+// MARK: UIViewControllerAnimatedTransitioning
 extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
     public func animationEnded(_ transitionCompleted: Bool) {
         draggingState = .default
@@ -251,7 +251,7 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0.1,
-            options: UIViewAnimationOptions.curveEaseOut,
+            options: .curveEaseOut,
             animations: {
                 toViewController.view.frame = targetRect
                 self.backgroundView.alpha = 1.0
@@ -269,7 +269,7 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         containerView.addSubview(toViewController.view)
         containerView.addSubview(backgroundView)
-        containerView.bringSubview(toFront: fromViewController.view)
+        containerView.bringSubviewToFront(fromViewController.view)
         
         backgroundView.alpha = 1.0
         let targetRect = CGRect(
@@ -283,7 +283,7 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0.1,
-            options: UIViewAnimationOptions.curveEaseOut,
+            options: .curveEaseOut,
             animations: {
                 fromViewController.view.frame = targetRect
                 self.backgroundView.alpha = 0.0
@@ -295,7 +295,7 @@ extension DraggableModalTransition: UIViewControllerAnimatedTransitioning {
     }
 }
 
-// pragma mark - UIViewControllerTransitioningDelegate
+// MARK: UIViewControllerTransitioningDelegate
 extension DraggableModalTransition: UIViewControllerTransitioningDelegate {
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animationMode = .presentation
@@ -319,14 +319,14 @@ extension DraggableModalTransition: UIViewControllerTransitioningDelegate {
     }
 }
 
-// pragma mark - UIGestureRecognizerDelegate
+// MARK: UIGestureRecognizerDelegate
 extension DraggableModalTransition: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-// pragma mark - ModalViewControllerDelegate
+// MARK: ModalViewControllerDelegate
 extension DraggableModalTransition: ModalViewControllerDelegate {
     public func modalViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
