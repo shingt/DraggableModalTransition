@@ -11,12 +11,10 @@ final class ModalViewController: UIViewController {
         static let dummyFooterHeight: CGFloat = 200
     }
 
-    private enum RowType: Int {
+    private enum RowType: Int, CaseIterable {
         case close
         case push
         case present
-
-        static var count: Int { return RowType.present.rawValue + 1 }
     }
 
     private lazy var tableView: UITableView = {
@@ -82,7 +80,7 @@ extension ModalViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let rowType = RowType(rawValue: indexPath.row % RowType.count)!
+        let rowType = RowType(rawValue: indexPath.row % RowType.allCases.count)!
         switch rowType {
         case .close:
             dismiss(animated: true, completion: nil)
@@ -111,7 +109,7 @@ extension ModalViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
-        let rowType = RowType(rawValue: indexPath.row % RowType.count)!
+        let rowType = RowType(rawValue: indexPath.row % RowType.allCases.count)!
         let text: String = {
             switch rowType {
             case .close: return "Close"
