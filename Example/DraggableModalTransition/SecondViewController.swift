@@ -3,7 +3,7 @@ import UIKit
 final class SecondViewController: UIViewController {
     private lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Close", for: UIControlState.normal)
+        button.setTitle("Close", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.sizeToFit()
         button.center = view.center

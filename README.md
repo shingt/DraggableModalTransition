@@ -3,9 +3,9 @@
 [![Build Status](https://www.bitrise.io/app/774d809f168e4285/status.svg?token=WCF_C3OBjA-7ejReXNwuuQ&branch=master)](https://www.bitrise.io/app/774d809f168e4285)
 [![Version](https://img.shields.io/cocoapods/v/DraggableModalTransition.svg?style=flat)](http://cocoapods.org/pods/DraggableModalTransition)
 [![License](https://img.shields.io/cocoapods/l/DraggableModalTransition.svg?style=flat)](http://cocoapods.org/pods/DraggableModalTransition)
-![Xcode 8.2+](https://img.shields.io/badge/Xcode-8.2%2B-blue.svg)
-![iOS 9.0+](https://img.shields.io/badge/iOS-9.0%2B-blue.svg)
-![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg)
+![Xcode 10.0+](https://img.shields.io/badge/Xcode-10.0%2B-blue.svg)
+![iOS 10.0+](https://img.shields.io/badge/iOS-10.0%2B-blue.svg)
+![Swift 4.2+](https://img.shields.io/badge/Swift-4.2%2B-orange.svg)
 
 ## Introduction
 
@@ -52,8 +52,8 @@ See example project for more details.
 ## Requirements
 
 * iOS9+
-* Swift 3.0+
-* Xcode 8.0+
+* Swift 4.2+
+* Xcode 10.0+
 
 ## Installation
 
